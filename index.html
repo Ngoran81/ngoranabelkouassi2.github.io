@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Engineering Portfolio</title>
+    <title>Kouassi Ngoran Abel | Mechanical Engineer Portfolio</title>
     <style>
         :root {
-            --primary: #2563eb;
-            --dark: #1e293b;
+            --primary: #1e3a8a;
+            --secondary: #0284c7;
+            --dark: #0f172a;
             --light: #f8fafc;
             --gray: #64748b;
+            --card-bg: #ffffff;
         }
         * {
             margin: 0;
@@ -23,9 +25,9 @@
             line-height: 1.6;
         }
         header {
-            background: var(--dark);
+            background: linear-gradient(135deg, var(--dark), var(--primary));
             color: white;
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
             text-align: center;
         }
         header h1 {
@@ -33,60 +35,126 @@
             margin-bottom: 0.5rem;
         }
         header p {
-            color: #94a3b8;
+            color: #cbd5e1;
             font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 1rem auto;
+        }
+        .contact-info {
+            font-size: 0.95rem;
+            color: #93c5fd;
+        }
+        .contact-info a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
         }
         nav {
-            background: #0f172a;
+            background: #020617;
             color: white;
             padding: 0.8rem;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
             font-weight: 500;
+            font-size: 0.95rem;
         }
         nav a:hover {
-            color: var(--primary);
+            color: var(--secondary);
         }
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
         section {
-            background: white;
-            padding: 2rem;
+            background: var(--card-bg);
+            padding: 2.5rem;
             margin-bottom: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
         }
         section h2 {
             color: var(--primary);
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--light);
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid #e2e8f0;
             padding-bottom: 0.5rem;
+            font-size: 1.5rem;
         }
-        .project-grid {
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
             margin-top: 1rem;
+        }
+        .skill-category {
+            background: var(--light);
+            padding: 1.2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+        .skill-category h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
         }
         .project-card {
             background: var(--light);
-            padding: 1.2rem;
-            border-radius: 6px;
+            padding: 1.5rem;
+            border-radius: 8px;
             border-left: 4px solid var(--primary);
+            margin-bottom: 1rem;
         }
         .project-card h3 {
+            color: var(--primary);
             margin-bottom: 0.5rem;
+        }
+        .project-card ul {
+            margin-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        .project-card li {
+            margin-bottom: 0.3rem;
+            color: #334155;
+        }
+        .experience-item, .education-item {
+            margin-bottom: 1.2rem;
+        }
+        .experience-item h3, .education-item h3 {
+            font-size: 1.15rem;
+            color: var(--dark);
+        }
+        .subtitle {
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+        .tag {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
         footer {
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem;
             color: var(--gray);
             font-size: 0.9rem;
         }
@@ -95,55 +163,126 @@
 <body>
 
     <header>
-        <h1> KOUASSI NGORAN ABEL </h1>
-        <p> Mechanical Engineer & Innovator</p>
+        <h1>Kouassi Ngoran Abel</h1>
+        <p>M.S. Mechanical Engineering Graduate Student | Arizona State University</p>
+        <div class="contact-info">
+            Mesa, AZ 85212 &bull; +1 (207) 478-5724 &bull; nkouassi@asu.edu<br>
+            <a href="https://ngoranabelkouassi2-netizen.github.io" target="_blank">ngoranabelkouassi2-netizen.github.io</a>
+        </div>
     </header>
 
     <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
+        <a href="#about">Summary</a>
+        <a href="#education">Education</a>
         <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#leadership">Leadership</a>
     </nav>
 
     <div class="container">
+        <!-- Professional Summary -->
         <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I am an aspiring engineer passionate about solving complex problems, building cool hardware/software solutions, and learning continuously. Welcome to my portfolio website hosted on GitHub Pages.</p>
+            <h2>Professional Summary</h2>
+            <p>Research-oriented Mechanical Engineering graduate student with experience in CAD/CAE, engineering simulation, programming, renewable energy systems, and multidisciplinary aircraft design. Technical interests include aerospace engineering, CFD, computational mechanics, robotics, thermal-fluid systems, and advanced manufacturing[cite: 8].</p>
         </section>
 
-        <section id="projects">
-            <h2>Engineering Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Project One</h3>
-                    <p>Brief description of your mechanical, electrical, or software project and the tools/languages used.</p>
+        <!-- Education -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Arizona State University</h3>
+                <div class="subtitle">M.S. Mechanical Engineering (Current) &bull; Mesa, AZ[cite: 8]</div>
+            </div>
+            <div class="education-item" style="margin-top: 1rem;">
+                <h3>University of Maine</h3>
+                <div class="subtitle">B.S. Mechanical Engineering &bull; GPA: 3.719[cite: 8]</div>
+            </div>
+            <div class="education-item" style="margin-top: 1rem;">
+                <h3>Université Félix Houphouët-Boigny</h3>
+                <div class="subtitle">B.S. Mathematics and Applications[cite: 8]</div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <p>Python, MATLAB, C, Scilab</p>
                 </div>
-                <div class="project-card">
-                    <h3>Project Two</h3>
-                    <p>Brief description of another project showcasing your technical capabilities and problem-solving skills.</p>
+                <div class="skill-category">
+                    <h3>CAD & CAE</h3>
+                    <p>SolidWorks, Abaqus, STAR-CCM+, XFLR5</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Aerospace & Electronics</h3>
+                    <p>Altium Designer, Arduino, Electronic prototyping</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Engineering & Software</h3>
+                    <p>Design optimization, Data analysis, Technical documentation, Microsoft Office, LaTeX</p>
                 </div>
             </div>
         </section>
 
-        <section id="skills">
-            <h2>Skills & Technologies</h2>
-            <p><strong>Languages & Tools:</strong> Python, C++, MATLAB, CAD, Git, HTML/CSS</p>
-            <p><strong>Core Competencies:</strong> Circuit Design, Data Analysis, Prototyping, Technical Writing</p>
+        <!-- Engineering Projects -->
+        <section id="projects">
+            <h2>Engineering Projects</h2>
+            <div class="project-card">
+                <h3>Design-Build-Fly (DBF) Capstone Project</h3>
+                <div class="subtitle">Role: Time & Optimization Manager</div>
+                <ul>
+                    <li>Managed project timing and optimization activities for an aircraft design project[cite: 8].</li>
+                    <li>Produced CAD models and supported aerodynamic design optimization[cite: 8].</li>
+                    <li>Collaborated with a multidisciplinary engineering team to improve design performance[cite: 8].</li>
+                </ul>
+            </div>
         </section>
 
-        <section id="contact">
-            <h2>Get in Touch</h2>
-            <p>Feel free to reach out via email or connect with me on professional platforms:</p>
-            <p style="margin-top: 0.8rem;">
-                <strong>Email:</strong> your.email@example.com<br>
-                <strong>GitHub:</strong> <a href="https://github.com/ngoranabelkouassi2" target="_blank">github.com/ngoranabelkouassi2</a>
-            </p>
+        <!-- Professional Experience -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="experience-item">
+                <h3>Facilities Management - Carpentry Shop</h3>
+                <div class="subtitle">Building Maintenance & Construction</div>
+                <p>Performed building maintenance, custom furniture design, and HVAC installation[cite: 8].</p>
+            </div>
+            <div class="experience-item" style="margin-top: 1.5rem;">
+                <h3>Roi Energy Solar</h3>
+                <div class="subtitle">Solar Energy Technician</div>
+                <p>Installed and maintained photovoltaic systems; configured inverters and diagnosed battery systems[cite: 8].</p>
+            </div>
+        </section>
+
+        <!-- Leadership & Research Interests -->
+        <section id="leadership">
+            <h2>Leadership, Memberships & Research</h2>
+            <div class="experience-item">
+                <h3>Academic Tutoring & Community Service</h3>
+                <p><strong>Academic Tutor:</strong> TRIO SSS, ENCORPS, Knack[cite: 8]</p>
+                <p><strong>Professional Memberships:</strong> AIAA, Tau Beta Pi, Golden Key[cite: 8]</p>
+                <p><strong>Service:</strong> LEKO NGO - Education & Green Energy[cite: 8]</p>
+            </div>
+            <div style="margin-top: 1.5rem;">
+                <h3>Research Interests</h3>
+                <div class="tags-container">
+                    <span class="tag">Aerospace Engineering</span>
+                    <span class="tag">Aircraft Design</span>
+                    <span class="tag">CFD</span>
+                    <span class="tag">Computational Mechanics</span>
+                    <span class="tag">Robotics</span>
+                    <span class="tag">Thermal-Fluid Systems</span>
+                    <span class="tag">Advanced Manufacturing</span>
+                    <span class="tag">Materials</span>
+                </div>
+            </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2026 Your Name. Built with GitHub Pages.</p>
+        <p>&copy; 2026 Kouassi Ngoran Abel. Built with GitHub Pages.</p>
     </footer>
 
 </body>
